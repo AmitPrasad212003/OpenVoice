@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Speech bubble -->
+  <path d="M8 12c0-4.418 3.582-8 8-8h32c4.418 0 8 3.582 8 8v32c0 4.418-3.582 8-8 8H24l-8 8V44H16c-4.418 0-8-3.582-8-8V12z" fill="#4A90E2"></path>
+  
+  <!-- Microphone -->
+  <rect x="28" y="18" width="8" height="20" rx="4" fill="#fff"></rect>
+  <path d="M32 40v6" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M28 46h8" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+</svg>

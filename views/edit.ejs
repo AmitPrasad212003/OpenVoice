@@ -1,0 +1,11 @@
+<%- include("partials/header") %>
+
+<h2>Edit Chat</h2>
+<form action="/chats/<%= chat._id %>?_method=PUT" method="POST" class="form">
+  <input type="text" value="<%= chat.from %>" disabled>
+  <input type="text" value="<%= chat.to %>" disabled>
+  <textarea name="msg" required><%= chat.msg %></textarea>
+  <button type="submit" class="btn-primary">Update</button>
+</form>
+
+<%- include("partials/footer") %>

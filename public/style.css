@@ -1,0 +1,241 @@
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #000; /* pure black */
+  color: #e0e0e0; /* light gray text */
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111; /* dark black */
+  color: #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.navbar h1 a {
+  color: #38bdf8; /* bright cyan */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar h1 a:hover {
+  color: #0ea5e9;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* ===== Container ===== */
+.container {
+  flex: 1; /* push footer down */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Chat Grid ===== */
+.chat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.chat-card {
+  background: #111; /* darker card */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.9);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.message {
+  margin-bottom: 1rem;
+  color: #c0c0c0;
+}
+
+/* ===== Forms ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #000;
+  color: #e0e0e0;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #38bdf8;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* ===== Buttons ===== */
+button, .btn-primary, .btn-secondary, .btn-danger, .btn {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+  background: #38bdf8;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #222;
+  color: #e0e0e0;
+}
+
+.btn-secondary:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #991b1b;
+  transform: scale(1.05);
+}
+
+.btn {
+  background: #38bdf8;
+  color: #000;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+}
+
+/* ===== Error Page ===== */
+.error-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+}
+
+.error-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ef4444;
+}
+
+.error-container p {
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #888;
+  border-top: 1px solid #333;
+  margin-top: auto; /* sticky footer */
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .chat-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .chat-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+.chat-card {
+  position: relative; /* Needed for absolute positioning of time */
+  padding: 1.5rem;
+  background: #111; /* dark theme */
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.chat-time {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 12px;
+  color: #aaa;
+}

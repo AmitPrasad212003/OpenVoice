@@ -1,0 +1,11 @@
+<%- include("partials/header") %>
+
+<h2>Create a New Chat</h2>
+<form action="/chats" method="POST" class="form">
+  <input type="text" name="from" placeholder="From (sender)" required>
+  <input type="text" name="to" placeholder="To (receiver)" required>
+  <textarea name="msg" placeholder="Type your message..." required></textarea>
+  <button type="submit" class="btn-primary">Send</button>
+</form>
+
+<%- include("partials/footer") %>
